@@ -2,6 +2,7 @@ version: "3.7"
 
 services:
     doc:
+      image: 432084094746.dkr.ecr.cn-northwest-1.amazonaws.com.cn/labwise-help:latest
       build:
         context: .
         dockerfile: Dockerfile
