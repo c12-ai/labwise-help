@@ -21,7 +21,7 @@ on:
 
 env:
   AWS_REGION: cn-northwest-1
-  REPOSITORY_NAME: labwise-run
+  REPOSITORY_NAME: labwise-help
 
 jobs:
   sync-code:
