@@ -5,6 +5,18 @@ on:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      target-env:
+        description: 'Environment to create source branch'
+        required: true
+        type: choice
+        options:
+          - develop
+          - uat
+          - product
+          - demo
+          - beigene
+        default: 'develop'
 
 
 env:
