@@ -1,4 +1,4 @@
-- Labwise help document
+- [Chinese](/)Labwise help document
 
     - [Quick Start](/en/)
     - [Product introduction](/en/feature_text.md)

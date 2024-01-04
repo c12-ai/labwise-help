@@ -1,4 +1,4 @@
-- Labwise help document
+- [英文帮助](/en/)Labwise帮助文档
 
     - [Quick Start](/)
     - [产品帮助文本](/feature_text.md)
