@@ -75,6 +75,7 @@ jobs:
           docker-compose build
           docker-compose down
           docker-compose up -d
+          docker-compose push
 
   notify_on_failure:
     runs-on: ubuntu-latest
