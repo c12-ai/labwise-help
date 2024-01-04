@@ -1,0 +1,76 @@
+name: GitOps Docker Compose Deployment
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+
+env:
+  AWS_REGION: cn-northwest-1
+  REPOSITORY_NAME: labwise-run
+
+jobs:
+  sync-code:
+    timeout-minutes: 30 # the workflow can run 30 mins at most
+    name: sync code from github to AWS code commit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Github to AWS CN CodeCommit Sync
+        uses: Valen-C12/sync-up-to-codecommit-action@v1.0
+        with:
+          repository_name: ${{ env.REPOSITORY_NAME }}
+          aws_region: ${{ env.AWS_REGION }}
+
+  deploy:
+    timeout-minutes: 30 # the workflow can run 30 mins at most
+    name: Deploy to ${{ inputs.target-env }} environment
+    runs-on: self-hosted
+    needs: [ sync-code ]
+
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Checkout CodeCommit repo
+        run: |
+          git config --global credential.helper '!aws codecommit credential-helper $@'
+          git config --global credential.UseHttpPath true
+          rm -rf ${{ env.REPOSITORY_NAME }}
+          git clone https://git-codecommit.cn-northwest-1.amazonaws.com.cn/v1/repos/${{ env.REPOSITORY_NAME }}
+
+      - name: Build image and start run
+        run: |
+          cd ${{ env.REPOSITORY_NAME }}
+          docker-compose build
+          docker-compose down
+          docker-compose up -d
+
+  notify_on_failure:
+    runs-on: ubuntu-latest
+    if: ${{ failure() }}
+    needs: deploy
+    steps:
+      - name: Call feishu webhook on failure
+        run: >
+          curl -X POST -H "Content-Type: application/json"
+          https://www.feishu.cn/flow/api/trigger-webhook/6c3e75d06f6aa9dc08f43d3445447892
+          -d '{ "actionDetailUrl": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" }'

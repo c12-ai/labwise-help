@@ -8,5 +8,5 @@ services:
       volumes:
         - ${PWD}/src:/home/node
       ports:
-        - 3000:3000
+        - 6666:3000
       command: docsify serve .
