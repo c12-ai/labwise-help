@@ -1,6 +1,5 @@
+- [中文帮助](/)
+
+  - [Quick Start](/en/quick_start.md)
 
 
-- [Quick Start](/en/quick_start.md)
-
-
-- [Chinese help](/)
