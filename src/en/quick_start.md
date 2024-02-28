@@ -8,4 +8,4 @@
 ## Product manual
 We prepared a manual aims to guide users through the main functionalities of Labwise. It includes detailed, step-by-step instructions for performing retrosynthesis designs using generative AI models, and the relevant prior reactions for references for each reaction in the synthesis routes.
 
-<a href="./docs/Product_Manual_Labwise_2024v1.pdf" download>Click to Download</a>
+<a href="./docs/Product_Manual_Labwise_2024v3.pdf" download>Click to Download</a>

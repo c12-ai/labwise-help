@@ -1,4 +1,4 @@
-- [英文帮助](/en/)
+- [Go to English Docs](/en/)
 
     - [三分钟视频介绍](/quick_start.md)
     - [产品帮助文本](/feature_text.md)
