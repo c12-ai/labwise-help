@@ -8,8 +8,10 @@ installations.
 
 1. Type the domain.com:1337/admin and log-in with the admin account (will be provided to the system admin). In the
    Content Manager tab find the content “User”
+
    ![](../images/img_98.png)
 2. Click the button “Create new entry”
+
    ![](../images/img_99.png)
 3. Input:
     * The user name
@@ -19,10 +21,12 @@ installations.
     * Select False for blocked
     * The role **must** be pm-retro-only
     * You can leave the manager_id and personal project blank
+   
       ![](../images/img_100.png)
     * Finally, click “Save”, then the account with the password can be used to the log-in Labwise.
 
 4. Once an account is created, you can click the corresponding row to edit it
+
    ![](../images/img_101.png)
 
 ## Installation Guide
@@ -151,7 +155,13 @@ wget -qO - https://www.c12.ai/static/installer-1.0.1.sh |bash -s "laurencecao" "
 #### Update Labwise
 We have deployed an updater in Labwise, which regularly checks for new updates from docker hub. When it discovers new updates, users can choose to start the update at an appropriate time.
 
-1. Start and stop the updater
+![](../images/img_102.png)
+
+If you choose to turn off the updater, Labwise will only visit time.cloudflare.com(NTS) to check whether the licence is expired.
+
+![](../images/img_103.png)
+##### Start and stop the updater
+
 You can start the updater by executing the following command in the terminal:
 ```
 sudo systemctl start c12updater
@@ -166,4 +176,13 @@ To check if the updater is turned on:
 sudo systemctl status c12updater
 ```
 
-2. 
+##### Update Labwise
+When there's an update, we will let you know via email.
+
+Type the domain.com:1337/admin to the browser and log-in with the admin account (will be provided to the system admin).
+
+Click "Content Manager" and find "Update History", you will find the corresponding version of labwise
+![](../images/img_104.png)
+
+Click the row and set "confirm_update" to *True*, the updater will update Labwise within 5 minutes.
+
