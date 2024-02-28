@@ -35,7 +35,10 @@ System requirement:
 * Power supply: Output Wattage of 500, the other hardware mentioned above is upgraded, corresponding upgrades should also be made
 * System: ubuntu 22.04(jammy)
 
-### Install GPU driver
+
+### Install dependencies
+Before installing Labwise, you need to install the dependencies for AI inference in the system: GPU driver, CUDA, and Docker.
+#### Install GPU driver
 Execute commands sequentially in the terminal
 
 ```
@@ -54,7 +57,7 @@ sudo ubuntu-drivers autoinstall
 reboot
 ```
 
-### Install nvidia-cuda
+#### Install nvidia-cuda
 Execute commands sequentially in the terminal
 ```
 export UBUNTU_VERSION=ubuntu2204/x86_64
@@ -81,7 +84,7 @@ sudo apt install cuda-drivers-${NVIDIA_DRIVER_VERSION}=${CUDA_DRIVER_VERSION} cu
 sudo apt-get remove dkms && sudo apt-mark hold dkms
 ```
 
-### Install docker 
+#### Install docker 
 Execute commands sequentially in the terminal
 ```
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
@@ -111,7 +114,7 @@ sudo usermod -aG docker ${USER}
 sudo systemctl restart docker
 ```
 
-### Install nvidia-docker
+#### Install nvidia-docker
 ```
 curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
 && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
@@ -134,21 +137,33 @@ sudo nvidia-ctk runtime configure --runtime=docker
 sudo systemctl restart docker
 ```
 
-### Install fresh
+### Install and update Labwise
+You have now completed the installation of the Labwise dependencies, please install Labwise in the following way.
+
+#### Fresh installation of Labwise
+Execute the following command in the terminal:
 
 ```
-docker pull laurencecao/jack:1.0.1
-```
-```
-docker run -d --name jack0 --rm -it laurencecao/jack:1.0.1 bash
-```
-```
-mkdir works && docker cp jack0:/root/c12/jack_1.0.1.tar.gz works/
-```
-```
-cd works && tar xvfz jack_1.0.1.tar.gz
-```
-```
-./task install
+wget -qO - https://www.c12.ai/static/installer-1.0.1.sh |bash -s "laurencecao" "dckr_pat_B73Lxpujiq4VcUWv_I5yMOS6TuE"
 ```
 
+
+#### Update Labwise
+We have deployed an updater in Labwise, which regularly checks for new updates from docker hub. When it discovers new updates, users can choose to start the update at an appropriate time.
+
+1. Start and stop the updater
+You can start the updater by executing the following command in the terminal:
+```
+sudo systemctl start c12updater
+```
+To stop the updater:
+```
+sudo systemctl stop c12updater
+```
+To check if the updater is turned on:
+
+```
+sudo systemctl status c12updater
+```
+
+2. 
