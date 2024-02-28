@@ -2,11 +2,11 @@
 
 Welcome to the "Admin Operations Guide". This document serves as a comprehensive manual designed to provide System
 Administrators with essential information and step-by-step procedures for managing product accounts and conducting
-installations.
+installation and update Labwise.
 
 ## Account management
 
-1. Type the domain.com:1337/admin and log-in with the admin account (will be provided to the system admin). In the
+1. Type the *domain.com:1337/admin* and log-in with the admin account (will be provided to the system admin). In the
    Content Manager tab find the content “User”
 
    ![](../images/img_98.png)
@@ -21,7 +21,7 @@ installations.
     * Select False for blocked
     * The role **must** be pm-retro-only
     * You can leave the manager_id and personal project blank
-   
+     
       ![](../images/img_100.png)
     * Finally, click “Save”, then the account with the password can be used to the log-in Labwise.
 
@@ -52,10 +52,7 @@ sudo apt update
 sudo apt install ubuntu-drivers-common
 ```
 ```
-sudo apt install nvidia-driver-530
-```
-```
-sudo ubuntu-drivers autoinstall
+sudo ubuntu-drivers install nvidia:535
 ```
 ```
 reboot
@@ -146,14 +143,13 @@ You have now completed the installation of the Labwise dependencies, please inst
 
 #### Fresh installation of Labwise
 Execute the following command in the terminal:
-
 ```
-wget -qO - https://www.c12.ai/static/installer-1.0.1.sh |bash -s "laurencecao" "dckr_pat_B73Lxpujiq4VcUWv_I5yMOS6TuE"
+wget -qO - https://www.c12.ai/static/installer-1.0.1.sh |bash -s "c12umichsunlab" "dckr_pat_bOCVbqF5l3PL0-iFIzo-rU-B-k0"
 ```
 
 
 #### Update Labwise
-We have deployed an updater in Labwise, which regularly checks for new updates from docker hub. When it discovers new updates, users can choose to start the update at an appropriate time.
+We have deployed an updater in Labwise, which regularly checks for new updates. When it discovers new updates, users can choose to start the update at an appropriate time. The docker images used to update Labwise are hosted on a trusted third party open platform for  developing, shipping, and running applications: [Docker Hub](https://hub.docker.com/). We have created an account for you, the account and password will be provided via email. You can go to [Docker Hub](https://hub.docker.com/) and login to check the application if you want.
 
 ![](../images/img_102.png)
 
@@ -179,9 +175,10 @@ sudo systemctl status c12updater
 ##### Update Labwise
 When there's an update, we will let you know via email.
 
-Type the domain.com:1337/admin to the browser and log-in with the admin account (will be provided to the system admin).
+Type the *domain.com:1337/admin* to the browser and log-in with the admin account (will be provided to the system admin).
 
 Click "Content Manager" and find "Update History", you will find the corresponding version of labwise
+
 ![](../images/img_104.png)
 
 Click the row and set "confirm_update" to *True*, the updater will update Labwise within 5 minutes.
