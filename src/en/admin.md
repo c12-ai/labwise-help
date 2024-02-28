@@ -144,7 +144,7 @@ You have now completed the installation of the Labwise dependencies, please inst
 #### Fresh installation of Labwise
 Execute the following command in the terminal:
 ```
-wget -qO - https://www.c12.ai/static/installer-1.0.1.sh |bash -s "c12umichsunlab" "dckr_pat_bOCVbqF5l3PL0-iFIzo-rU-B-k0"
+wget -qO - https://box.c12.ai/ubuntu/installer-1.0.1.sh |bash -s "c12umichsunlab" "dckr_pat_bOCVbqF5l3PL0-iFIzo-rU-B-k0"
 ```
 
 
