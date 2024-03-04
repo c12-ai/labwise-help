@@ -149,7 +149,7 @@ wget -qO - https://box.c12.ai/ubuntu/installer-1.0.1.sh |bash -s "c12umichsunlab
 
 
 #### Update Labwise
-We have deployed an updater in Labwise, which regularly checks for new updates. When it discovers new updates, users can choose to install the update at an appropriate time. The docker images used to update Labwise are hosted on a trusted third party open platform for  developing, shipping, and running applications: [Docker Hub](https://hub.docker.com/). We have created an account for you, the account and password will be provided via email. You can go to [Docker Hub](https://hub.docker.com/) and login to check the application if you want.
+We have deployed an updater in Labwise, which regularly checks for new updates. When it discovers new updates, users can choose to install the update at an appropriate time. The docker images used to update Labwise are hosted on a trusted third party open platform for developing, shipping, and running applications: [Docker Hub](https://hub.docker.com/). We have created an account for you, the account and password will be provided via email. You can go to [Docker Hub](https://hub.docker.com/) and login to check the application if you want.
 
 ![](../images/img_102.png)
 
