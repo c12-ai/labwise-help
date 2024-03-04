@@ -10,4 +10,4 @@
 
 如果您遇到任何的问题，或者有任何意见或者建议，您可以通过扫描下方的二维码来进入我们的帮助群
 
-![img_2.png](img_2.png)
+<img src="./img_2.png" width = "100" height = "100" alt="图片名称" align=center />
