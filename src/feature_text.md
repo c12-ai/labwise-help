@@ -1,3 +1,4 @@
+
 # 产品介绍
 
 Labwise是一个由C12.ai开发的AI应用程序，旨在利用最新的生成式AI技术为科学家提供AI辅助的逆合成服务。用户可以利用Labwise，在AI的帮助下设计具有可靠的、新颖的、多样的路线。
@@ -14,51 +15,51 @@ Labwise是一个由C12.ai开发的AI应用程序，旨在利用最新的生成�
 1)打开您的Chrome浏览器，导航至labwise-d.beigenecorp.net。使用您的域账号登录。
 
 2)左侧列是主要的导航栏。在“项目”模块内，您将能够添加项目、分子，并启动逆合成设计任务。另外，“实验区”模块允许直接输入分子结构，并立即开始设计过程。无论您是管理综合项目还是尝试单个分子的实验，这样设计都能简化您的工作流程，
-![](./images/3.png)
+<img src="./images/3.png" width="600" alt="主界面导航栏" />
 
 3)点击折叠/展开按钮，可以折叠/展开左侧的导航面板
 
-![](./images/4.png)
+<img src="./images/4.png" width="600" alt="折叠导航面板" />
 
-![](./images/5.png)
+<img src="./images/5.png" width="600" alt="展开导航面板" />
 
 ## 快速逆合成
 
 快速逆合成专为首次使用者快速熟悉我们的系统而设计。
 
 进入快速逆合成
-![](./images/6.png)
+<img src="./images/6.png" width="600" alt="进入快速逆合成" />
 
 发起逆合成任务
-![](./images/7.png)
+<img src="./images/7.png" width="600" alt="发起逆合成任务" />
 
 注意：初次访问此页面可能需要几秒钟来加载前端资源。随后的页面访问应该会更快。 
 
 输入目标化合物
 
 - 为分子命名一个ID
-![](./images/8.png)
+<img src="./images/8.png" width="500" alt="为分子命名ID" />
 
 使用以下方法之一输入分子结构：
 
 a) 从ChemDraw或其他来源复制SMILES
 在ChemDraw中：
 
-![](./images/9.png)
+<img src="./images/9.png" width="500" alt="ChemDraw中复制SMILES" />
 
 在Labwise中，点击文件夹图标，然后点击"从剪贴板粘贴"，将刚刚复制的SMILES粘贴进去。
 
-![](./images/10.png)
+<img src="./images/10.png" width="500" alt="点击文件夹图标" />
 
-![](./images/11.png)
+<img src="./images/11.png" width="400" alt="从剪贴板粘贴" />
 
-![](./images/12.png)
+<img src="./images/12.png" width="500" alt="粘贴SMILES" />
 
 现在，结构应该显示在画布上了。
 
 b) 输入分子的名称或CAS号码
 
-![](./images/13.png)
+<img src="./images/13.png" width="500" alt="输入分子名称或CAS号" />
 
 在输入分子的CAS号或名称后，点击“搜索分子”。
 注意：此方法仅适用于常见分子。如果找不到相应的分子，请使用其他方法。
@@ -66,22 +67,22 @@ b) 输入分子的名称或CAS号码
 c) 使用分子图片
 您可以点击“选择文件”以浏览您本地磁盘上保存的jpg/png文件。
 
-![](./images/14.png)
+<img src="./images/14.png" width="500" alt="选择分子图片文件" />
 
-![](./images/15.png)
+<img src="./images/15.png" width="500" alt="上传分子图片" />
 
 Labwise需要几秒钟来识别结构。
 
 现在，您应该在画布上看到分子的结构被显示出来了。
 
-![](./images/16.png)
+<img src="./images/16.png" width="500" alt="分子结构显示" />
 
 
 
 4）提交一个逆合成任务
 点击“提交”开始一个逆合成任务。如果需要，您可以选择在屏幕右侧自定义以下参数以进行个别运行。
 
-![](./images/17.png)
+<img src="./images/17.png" width="600" alt="参数配置界面" />
 
 - 最长链长度：指定AI设计的所有路线中的最大反应步骤。如果分子较为复杂，请设置更高的值。
 - 原料最大成本：指定AI设计路线中使用的起始物料的最大单价。 
@@ -93,21 +94,21 @@ Labwise需要几秒钟来识别结构。
 5）查看正在进行的逆合成运行
 • 在发起逆合成任务后，您应该会看到一个标记为“进行中”的新卡片，表示该任务正在被处理中。
 
-![](./images/18.png)
+<img src="./images/18.png" width="500" alt="进行中的任务" />
 • 如果提交了多个分子的逆合成任务，则后续的任务将以“排队中”的状态排队。
 
-![](./images/19.png)
+<img src="./images/19.png" width="500" alt="排队中的任务" />
 
 
 • 对于正在进行中的运行，如果AI找到了新的路线，卡片上会显示一个红色数字提示，显示新设计的路线数量，用户可以点击卡片来查看它们。
 
-![](./images/20.png)
+<img src="./images/20.png" width="500" alt="新路线提示" />
 
 • 一旦发起了逆合成任务，您可以离开此页面并处理其他分子。您可以在左下角的操作表中查看所有您的逆合成任务 。
 
 • 任务完成后，会弹出一个通知。点击“查看”按钮以查看AI设计的路线。在逆合成任务完成之前，您可以点击“取消”来取消任务，并且不会保存任何路线。
 
-![](./images/21.png)
+<img src="./images/21.png" width="400" alt="任务完成通知" />
 
 6）查看AI设计的路线
 - AI生成的合成路线显示为主要路径，目标分子以黄色框标记，中间体以蓝色框标记，关键起始物料以黑色虚线框标记。您可以水平滑动以查看整个路线。每个分子和反应都是可点击的，允许您复制它们的SMILES以进行详细分析。 
@@ -120,16 +121,16 @@ Labwise需要几秒钟来识别结构。
 
 点击“查看”以查看路线详细信息。
 
-![](./images/22.png)
+<img src="./images/22.png" width="700" alt="AI设计的路线详情" />
 
 
 • 如果存在多个支链方案，用户可以切换查看多个支链方案。
 
-![](./images/23.png)
+<img src="./images/23.png" width="600" alt="多支链方案切换" />
 
 • 点击"反应"以查看反应详情。
 
-![](./images/24.png)
+<img src="./images/24.png" width="600" alt="反应详情" />
 
 
 # 其他功能
@@ -140,9 +141,9 @@ Labwise需要几秒钟来识别结构。
 ### 创建项目
 点击下图中的"新建项目"按钮来创建一个项目
 
-![](./images/img_105.png)
+<img src="./images/img_105.png" width="500" alt="新建项目按钮" />
 
-![](./images/img_106.png)
+<img src="./images/img_106.png" width="500" alt="创建项目界面" />
 
 默认的，创建项目的用户会成为项目经理，项目经理可以对项目中的成员进行管理.
 
@@ -150,62 +151,62 @@ Labwise需要几秒钟来识别结构。
 
 您可以点击下面的按钮修改项目的信息
 
-![](./images/img_107.png)
+<img src="./images/img_107.png" width="500" alt="修改项目按钮" />
 
-![](./images/img_108.png)
+<img src="./images/img_108.png" width="500" alt="修改项目信息" />
 
 ### 取消项目
 您可以点击项目的状态，将状态改为已取消来取消一个项目
 
-![](./images/img_109.png)
+<img src="./images/img_109.png" width="500" alt="取消项目状态" />
 
 被取消的项目默认不会显示，您可以通过选中"已取消"状态的项目来看到它
 
-![](./images/img_110.png)
+<img src="./images/img_110.png" width="500" alt="已取消项目筛选" />
 
-![](./images/img_111.png)
+<img src="./images/img_111.png" width="500" alt="查看已取消项目" />
 
 ## 在项目中添加分子和发起逆合成
 
 点击查看进入项目
 
-![](./images/img_112.png)
+<img src="./images/img_112.png" width="500" alt="进入项目" />
 
 点击右上角的"添加分子"，添加分子的方式和上一章中是一致的，在此不做郭队赘述。
 
-![](./images/img_113.png)
+<img src="./images/img_113.png" width="500" alt="添加分子" />
 
 在分子创建好以后，点击分子的卡片，进入这个分子的详情
 
-![](./images/img_114.png)
+<img src="./images/img_114.png" width="500" alt="分子详情" />
 
 点击"生成路线"进行逆合成，这个流程和上一章中介绍的是一致的，不做过多赘述。
 
-![](./images/img_116.png)
+<img src="./images/img_116.png" width="500" alt="生成路线" />
 
 ## 取消分子
 
 通过改变分子的状态取消分子
 
-![](./images/img_115.png)
+<img src="./images/img_115.png" width="500" alt="取消分子状态" />
 
 被取消的分子默认不显示，可通过勾选"已取消"状态查看被取消的分子
 
-![](./images/img_117.png)
+<img src="./images/img_117.png" width="500" alt="查看已取消分子" />
 
 ## 路线偏好
 
 在AI路线页面，可点击下图中的图标来设置路线偏好，我们会根据您设置的偏好把合适的路线排列在列表的前面。
 
-![](./images/img_118.png)
+<img src="./images/img_118.png" width="500" alt="路线偏好设置" />
 
 ## 个人设置
 
 您可以通过点击导航栏下侧的设置进入个人设置
 
-![](./images/img_119.png)
+<img src="./images/img_119.png" width="500" alt="个人设置入口" />
 
 您可以在这个页面配置个人的偏好，点击应用后，刷新已经打开的页面，或者进入新的页面时将会生效
 
-![img_1.png](img_1.png)
+<img src="img_1.png" width="500" alt="个人偏好配置" />
 
